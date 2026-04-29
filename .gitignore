@@ -1,0 +1,5 @@
+.idea
+.prompts
+node_modules
+dist
+*.tsbuildinfo

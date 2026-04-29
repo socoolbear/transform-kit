@@ -1,0 +1,50 @@
+{
+  "name": "@socoolbear/transform-kit",
+  "version": "0.1.0",
+  "description": "Typed transform utilities and optional Array extensions for TypeScript.",
+  "license": "MIT",
+  "author": "socoolbear",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./array-extensions": {
+      "types": "./dist/array-extensions.d.ts",
+      "default": "./dist/array-extensions.js"
+    }
+  },
+  "sideEffects": [
+    "./dist/array-extensions.js"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "pnpm clean && tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "transform",
+    "transformer",
+    "typescript",
+    "array",
+    "utility"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
