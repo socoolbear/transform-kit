@@ -33,14 +33,10 @@ const playerModel = transform(playerEntity, new PlayerTransformer());
 const edge = transform(item, new PlayerEdgeTransformer(), index);
 ```
 
-### `transformArray(items, transformer)`
-
-배열 변환을 prototype patch 없이 함수로 사용.
+배열 변환은 native `Array.prototype.map` 또는 아래의 opt-in 확장을 사용한다.
 
 ```ts
-import { transformArray } from '@socoolbear/transform-kit';
-
-const players = transformArray(entities, new PlayerTransformer());
+const players = entities.map((entity, index) => transform(entity, new PlayerTransformer(), index));
 ```
 
 ## Opt-in: `Array.prototype.transform`
